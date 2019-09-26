@@ -1,26 +1,26 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import styles from './assets/scss/style.scss';
 import Card from './components/card';
+import Header from './components/header';
+import cardData from './api/data';
 
-const content = 'Hello world!';
-
-const cardData = {
-  date: new Date(),
-  text: 'I hope you enjoy learning React!',
-  author: {
-    name: 'Hello Kitty',
-    avatarUrl: 'https://placekitten.com/g/264/264',
-  },
-};
 
 const App = () => (
   <Fragment>
     <div className={styles.homepage}>
-      <Card
-        date={cardData.date}
-        text={cardData.text}
-        author={cardData.author} 
-      />
+      <Header />
+      <div className="main">
+        {cardData.map((card) =>
+          <Card
+            key={card.id.toString()}
+            date={card.date}
+            text={card.text}
+            author={card.author}
+          />
+          
+        )}
+      </div>
+
     </div>
   </Fragment>
 );
