@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from './login'
+import Search from '../elements/search';
 const messageDay = new Date()
 class Header extends React.Component {
     render() {
@@ -11,6 +12,7 @@ class Header extends React.Component {
                     <h1>Buonasera</h1>
                 )}
                 <Login />
+                <Search />
             </div>
         )
     }
